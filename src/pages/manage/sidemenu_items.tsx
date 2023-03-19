@@ -66,12 +66,7 @@ export const side_menu_items: SideMenuItem[] = [
         to: "/@manage/settings/global",
         component: () => <CommonSettings group={Group.GLOBAL} />,
       },
-      {
-        title: "manage.sidemenu.sso",
-        icon: FiLogIn,
-        to: "/@manage/settings/sso",
-        component: () => <CommonSettings group={Group.SSO} />,
-      },
+
       {
         title: "manage.sidemenu.other",
         icon: BsMedium,
@@ -85,18 +80,7 @@ export const side_menu_items: SideMenuItem[] = [
     icon: OcWorkflow2,
     to: "/@manage/tasks",
     children: [
-      {
-        title: "manage.sidemenu.aria2",
-        icon: BsCloudArrowDownFill,
-        to: "/@manage/tasks/aria2",
-        component: lazy(() => import("./tasks/Aria2")),
-      },
-      {
-        title: "manage.sidemenu.qbit",
-        icon: FaBrandsQuinscape,
-        to: "/@manage/tasks/qbit",
-        component: lazy(() => import("./tasks/Qbit")),
-      },
+ 
       {
         title: "manage.sidemenu.upload",
         icon: BsCloudUploadFill,
@@ -140,20 +124,6 @@ export const side_menu_items: SideMenuItem[] = [
     to: "/@manage/backup-restore",
     icon: FaSolidDatabase,
     component: lazy(() => import("./backup-restore")),
-  },
-  {
-    title: "manage.sidemenu.about",
-    icon: BsFront,
-    to: "/@manage/about",
-    role: UserRole.GUEST,
-    component: lazy(() => import("./About")),
-  },
-  {
-    title: "manage.sidemenu.docs",
-    icon: FaSolidBook,
-    to: "https://alist.nn.ci",
-    role: UserRole.GUEST,
-    external: true,
   },
   {
     title: "manage.sidemenu.home",

@@ -51,56 +51,6 @@ const OtherSettings = () => {
 
   return (
     <MaybeLoading loading={settingsLoading()}>
-      <Heading mb="$2">{t("settings_other.aria2")}</Heading>
-      <SimpleGrid gap="$2" columns={{ "@initial": 1, "@md": 2 }}>
-        <Item
-          {...settings().find((i) => i.key === "aria2_uri")!}
-          value={uri()}
-          onChange={(str) => setUri(str)}
-        />
-        <Item
-          {...settings().find((i) => i.key === "aria2_secret")!}
-          value={secret()}
-          onChange={(str) => setSecret(str)}
-        />
-      </SimpleGrid>
-      <Button
-        my="$2"
-        loading={setAria2Loading()}
-        onClick={async () => {
-          const resp = await setAria2()
-          handleResp(resp, (data) => {
-            notify.success(`${t("settings_other.aria2_version")} ${data}`)
-          })
-        }}
-      >
-        {t("settings_other.set_aria2")}
-      </Button>
-      <Heading my="$2">{t("settings_other.qbittorrent")}</Heading>
-      <SimpleGrid gap="$2" columns={{ "@initial": 1, "@md": 2 }}>
-        <Item
-          {...settings().find((i) => i.key === "qbittorrent_url")!}
-          value={qbitUrl()}
-          onChange={(str) => setQbitUrl(str)}
-        />
-        <Item
-          {...settings().find((i) => i.key === "qbittorrent_seedtime")!}
-          value={qbitSeedTime()}
-          onChange={(str) => setQbitSeedTime(str)}
-        />
-      </SimpleGrid>
-      <Button
-        my="$2"
-        loading={setQbitLoading()}
-        onClick={async () => {
-          const resp = await setQbit()
-          handleResp(resp, (data) => {
-            notify.success(data)
-          })
-        }}
-      >
-        {t("settings_other.set_qbit")}
-      </Button>
       <Heading my="$2">{t("settings.token")}</Heading>
       <Input value={token()} readOnly />
       <HStack my="$2" spacing="$2">

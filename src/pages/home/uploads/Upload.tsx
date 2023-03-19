@@ -74,7 +74,7 @@ const Upload = () => {
   const { pathname } = useRouter()
   const [drag, setDrag] = createSignal(false)
   const [uploading, setUploading] = createSignal(false)
-  const [asTask, setAsTask] = createSignal(false)
+  const [asTask, setAsTask] = createSignal(true)
   const [uploadFiles, setUploadFiles] = createStore<{
     uploads: UploadFileProps[]
   }>({
@@ -256,6 +256,7 @@ const Upload = () => {
                 compact
                 size="xl"
                 aria-label={t("home.upload.upload_folder")}
+                title={t("home.upload.upload_folder")}
                 colorScheme="accent"
                 icon={<RiDocumentFolderUploadFill />}
                 onClick={() => {
@@ -266,6 +267,7 @@ const Upload = () => {
                 compact
                 size="xl"
                 aria-label={t("home.upload.upload_files")}
+                title={t("home.upload.upload_files")}
                 icon={<RiDocumentFileUploadFill />}
                 onClick={() => {
                   fileInput.click()

@@ -93,27 +93,11 @@ export const Right = () => {
                 }}
               />
             </Show>
-            <Show when={isFolder() && userCan("offline_download")}>
-              <RightIcon
-                as={IoMagnetOutline}
-                pl="0"
-                tips="offline_download"
-                onClick={() => {
-                  bus.emit("tool", "offline_download")
-                }}
-              />
-            </Show>
+
             <RightIcon
               tips="toggle_checkbox"
               as={TbCheckbox}
               onClick={toggleCheckbox}
-            />
-            <RightIcon
-              as={AiOutlineSetting}
-              tips="local_settings"
-              onClick={() => {
-                bus.emit("tool", "local_settings")
-              }}
             />
           </VStack>
           <RightIcon tips="more" as={CgMoreO} onClick={onToggle} />

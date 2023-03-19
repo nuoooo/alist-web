@@ -32,7 +32,7 @@ const Login = () => {
   const logo = useColorModeValue(logos[0], logos.pop())
   const t = useT()
   const title = createMemo(() => {
-    return `${t("login.login_to")} ${getSetting("site_title")}`
+    return `${getSetting("site_title")}`
   })
   useTitle(title)
   const bgColor = useColorModeValue("white", "$neutral1")
@@ -149,7 +149,7 @@ const Login = () => {
             >
               {t("login.remember")}
             </Checkbox>
-            <Text as="a" target="_blank" href={t("login.forget_url")}>
+            <Text as="a" target="_blank" title={t("Contact Adminstrator")}>
               {t("login.forget")}
             </Text>
           </Flex>
